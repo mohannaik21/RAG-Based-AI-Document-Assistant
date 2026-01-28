@@ -133,19 +133,27 @@ This makes the project ideal for **document analysis, research assistance, and c
 
 ## 📂 Project Structure
 ├── app.py
+
 ├── document_loader.py
+
 ├── qa_engine.py
+
 ├── vector_store.py
+
 ├── utils.py
+
 ├── requirements.txt
+
 ├── README.md
+
 ├── .gitignore
+
 └── venv/ (ignored)
 
 ## ⚙️ Installation & Setup (Step-by-Step)
 ### 1️⃣ Clone the repository
-bash
 git clone https://github.com/mohannaik21/RAG-Based-AI-Document-Assistant.git
+
 cd RAG-Based-AI-Document-Assistant
 
 ### 2️⃣ Create a virtual environment
@@ -156,15 +164,19 @@ venv\Scripts\activate
 
 ### 3️⃣ Install dependencies
 pip install --upgrade pip
+
 pip install -r requirements.txt
 
 ### 4️⃣ Configure environment variables (IMPORTANT)
 Create a file named .env in the project root directory:
+
 MISTRAL_API_KEY=your_mistral_api_key_here
 
 ⚠️ Notes:
 Ensure the file name is exactly .env (not .env.txt)
+
 .env is excluded from GitHub using .gitignore
+
 Restart the app after creating .env
 
 
