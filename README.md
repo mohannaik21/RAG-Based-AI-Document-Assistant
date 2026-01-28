@@ -50,6 +50,133 @@ Confidence Scoring - Similarity score aggregation for response reliability asses
 
 
 
+
+
+
+
+
+
+
+# 🤖 RAG-Based AI Document Assistant
+
+📌 Project Overview
+
+This **AI-Powered Document Chat Assistant** is a Retrieval-Augmented Generation (RAG) based system that allows users to upload documents (PDF, DOCX, TXT) and ask intelligent questions about their content.
+
+The application processes documents by extracting text, cleaning and preprocessing it, splitting it into semantic chunks, and storing them in a vector database. When a user asks a question, the system retrieves the most relevant document chunks using **hybrid search** (semantic + keyword-based) and generates accurate answers using **Mistral AI’s Large Language Model**.
+
+The UI is built with **Streamlit**, offering a clean chat interface with:
+- Real-time responses
+- Confidence scoring
+- Automatic source attribution
+
+This makes the project ideal for **document analysis, research assistance, and content exploration**.
+
+
+## 🧠 How It Works (RAG Architecture)
+1. User uploads a document (PDF, DOCX, or TXT)
+2. Text is extracted and preprocessed
+3. Content is split into overlapping semantic chunks
+4. Chunks are converted into embeddings using Sentence Transformers
+5. Embeddings are stored in a FAISS vector database
+6. User queries are embedded and matched against stored chunks
+7. Relevant context is passed to Mistral LLM for answer generation
+8. Final response is shown with confidence score and source reference
+
+
+## 🛠️ Technical Stack & Keywords
+
+### 🔹 Frontend & UI
+- **Streamlit** – Python web framework for rapid UI development
+- **HTML/CSS** – Custom styling for chat bubbles and layout
+- **JavaScript (implicit)** – Streamlit’s reactive rendering
+
+
+### 🔹 Document Processing
+- **PyPDF2** – PDF text extraction
+- **python-docx** – DOCX document parsing
+- **Regex (re module)** – Text cleaning and normalization
+- **Chunking Algorithm** – Overlapping text chunks with sentence boundary detection
+
+
+### 🔹 AI & Machine Learning
+- **Sentence Transformers** – Semantic text embeddings
+- **all-MiniLM-L6-v2** – Lightweight embedding model
+- **Mistral AI API** – Large Language Model for answer generation
+- **RAG (Retrieval-Augmented Generation)** – Combines retrieval with generative AI
+
+
+### 🔹 Vector Search & Retrieval
+- **FAISS** – Efficient similarity search in high-dimensional space
+- **Scikit-learn** – TF-IDF vectorization & cosine similarity
+- **TF-IDF** – Keyword-based relevance scoring
+- **Hybrid Search** – Semantic + keyword-based retrieval
+
+
+### 🔹 Data & State Management
+- **NumPy** – Vector operations
+- **Streamlit Session State** – Chat history persistence
+- **Metadata Tracking** – Source attribution and confidence scoring
+
+
+### 🔹 APIs & Utilities
+- **Requests** – API calls to Mistral AI
+- **python-dotenv** – Secure environment variable handling
+- **Error Handling** – Retry logic and graceful failures
+
+
+### 🔹 Architecture Patterns
+- **Modular Design** – Separate files for document loading, vector storage, and QA logic
+- **Real-time Processing** – Immediate feedback during uploads
+- **Confidence Scoring** – Similarity-based response reliability
+
+
+## 📂 Project Structure
+├── app.py
+├── document_loader.py
+├── qa_engine.py
+├── vector_store.py
+├── utils.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── venv/ (ignored)
+
+## ⚙️ Installation & Setup (Step-by-Step)
+### 1️⃣ Clone the repository
+bash
+git clone https://github.com/mohannaik21/RAG-Based-AI-Document-Assistant.git
+cd RAG-Based-AI-Document-Assistant
+
+### 2️⃣ Create a virtual environment
+python -m venv venv
+
+Activate it (Windows):
+venv\Scripts\activate
+
+### 3️⃣ Install dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
+
+### 4️⃣ Configure environment variables (IMPORTANT)
+Create a file named .env in the project root directory:
+MISTRAL_API_KEY=your_mistral_api_key_here
+
+⚠️ Notes:
+Ensure the file name is exactly .env (not .env.txt)
+.env is excluded from GitHub using .gitignore
+Restart the app after creating .env
+
+
+### 5️⃣ Run the application
+streamlit run app.py
+
+Open in browser:
+http://localhost:8501
+
+
+
+
 # To download requiremnts
 pip install -r requirements.txt
 
